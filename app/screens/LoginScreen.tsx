@@ -8,6 +8,7 @@ import { AuthInput } from '../../components/AuthInput';
 import { useLogin } from '../../hooks/useLogin';
 import { GradientButton } from '../../components/GradientButton';
 import { colors } from '../../theme/colors';
+import { CustomAlertDialog } from '../../components/CustomAlertDialog';
 
 const LoginScreen = () => {
     const navigation = useNavigation<any>();
@@ -17,6 +18,9 @@ const LoginScreen = () => {
         secureText, toggleSecureText,
         handleLogin,
         loading,
+        alert,
+        setAlert, hideAlert
+
     } = useLogin();
     const {
         staggerAnims,
@@ -140,6 +144,14 @@ const LoginScreen = () => {
                 </ScrollView>
 
             </KeyboardAvoidingView>
+
+            <CustomAlertDialog
+                visible={alert.visible}
+                type={"error"}
+                title={alert.title}
+                message={alert.message}
+                onClose={hideAlert}
+            />
 
         </View>
     )

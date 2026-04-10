@@ -7,16 +7,34 @@ export const useLogin = () => {
     const [loading, setLoading] = useState(false);
     const [secureText, setSecureText] = useState(true);
 
+    const [alert, setAlert] = useState({
+        visible: false,
+        title: '',
+        message: '',
+    });
+
+    const showAlert = useCallback((title: string, message: string) => {
+        setAlert({ visible: true, title, message });
+    }, []);
+
+    const hideAlert = useCallback(() => {
+        setAlert((prev) => ({ ...prev, visible: false }));
+    }, []);
+
     const toggleSecureText = useCallback(() => {
         setSecureText((prev) => !prev);
     }, []);
 
     const handleLogin = useCallback(async () => {
-        console.log(email, password);
+        if (!email || !password) {
+            showAlert('Missing Fields', 'Please fill in both email and password to continue.');
+            return;
+        } else {
+            // Proceed with login logic
+            showAlert('Login Successful', 'You have logged in successfully!');
+        }
 
-        Alert.alert("Login Attempt", `Email: ${email}\nPassword: ${password}`);
-
-    }, [])
+    }, [email, password, showAlert]);
 
     return {
         email,
@@ -29,5 +47,8 @@ export const useLogin = () => {
         setSecureText,
         toggleSecureText,
         handleLogin,
+        alert,
+        setAlert,
+        hideAlert,
     };
 }
