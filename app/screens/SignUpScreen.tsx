@@ -1,4 +1,4 @@
-import { Animated, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Animated, KeyboardAvoidingView, Platform, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useSignUpAnimations } from '../../hooks/useSignUpAnimations';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -34,6 +34,7 @@ const SignUpScreen = () => {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
             {/* Background decorative shapes */}
             <View style={styles.bgCircle1} />
             <View style={styles.bgCircle2} />

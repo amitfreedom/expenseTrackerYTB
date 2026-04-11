@@ -1,4 +1,4 @@
-import { Animated, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { Animated, KeyboardAvoidingView, Platform, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { useLoginAnimations } from '../../hooks/useLoginAnimations';
@@ -19,7 +19,7 @@ const LoginScreen = () => {
         handleLogin,
         loading,
         alert,
-        setAlert, hideAlert
+        hideAlert
 
     } = useLogin();
     const {
@@ -31,6 +31,8 @@ const LoginScreen = () => {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
+
             {/* Background decorative shapes */}
             <View style={styles.bgCircle1} />
             <View style={styles.bgCircle2} />
