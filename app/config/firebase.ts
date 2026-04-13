@@ -8,13 +8,13 @@ import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCGniYNL73XM_3K_Dwovbg0WOzvFiDpuLE",
-    authDomain: "expencetracker-e1d40.firebaseapp.com",
-    projectId: "expencetracker-e1d40",
-    storageBucket: "expencetracker-e1d40.firebasestorage.app",
-    messagingSenderId: "546460745583",
-    appId: "1:546460745583:web:1c661cfef75de88592729a",
-    measurementId: "G-DD8QP013MK"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "a",
+    measurementId: ""
 };
 
 let app;

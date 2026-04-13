@@ -73,7 +73,7 @@ export const useSignUp = () => {
             setLoading(true);
             await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 const user = userCredential.user;
-                navigation.replace('Home');
+                navigation.replace('MainTabs');
             });
 
 

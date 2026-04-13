@@ -60,7 +60,7 @@ export const useLogin = () => {
             await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 const user = userCredential.user;
                 console.log('User logged in:', user.email);
-                navigation.replace('Home');
+                navigation.replace('MainTabs');
             });
         } catch (e: any) {
             console.error(e);
